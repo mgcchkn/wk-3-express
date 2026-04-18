@@ -18,6 +18,8 @@ const router = express.Router();
  * is already applied in src/app.js via: app.use('/api/subreddits', subredditRoutes)
  */
 
-// YOUR CODE HERE
+router.get('/', getAllSubreddits);
+router.post('/', createSubreddit);
+router.get('/:id', getSubredditWithThreads);
 
 export default router;

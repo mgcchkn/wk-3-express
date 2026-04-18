@@ -2,13 +2,25 @@ import Subreddit from "../models/Subreddit.js";
 import Thread from "../models/Thread.js";
 
 export const fetchAllSubreddits = async () => {
-  // YOUR CODE HERE
+  const subreddits = await Subreddit.find();
+  return subreddits;
 };
 
 export const createNewSubreddit = async (name, description, author) => {
-  // YOUR CODE HERE
+  const newSubreddit = new Subreddit({
+    name,
+    description,
+    author,
+  });
+  await newSubreddit.save();
+  return newSubreddit;
 };
 
 export const fetchSubredditWithThreads = async (id) => {
-  // YOUR CODE HERE
+  const subreddit = await Subreddit.findById(id);
+  const threads = await Thread.find({ subreddit: id });
+  return {
+    subreddit,
+    threads,
+  };
 };
