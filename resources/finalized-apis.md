@@ -14,8 +14,8 @@ Base URL: `http://localhost:3000/api`
 
 | Method | Endpoint | Status |
 |--------|----------|--------|
-| GET | `/api/threads` | ⚠️ To be implemented |
-| GET | `/api/threads/:id` | ⚠️ To be implemented |
-| POST | `/api/threads` | ⚠️ To be implemented |
-| PUT | `/api/threads/:id` | ⚠️ To be implemented |
-| DELETE | `/api/threads/:id` | ⚠️ To be implemented |
+| GET | `/api/threads` | ✅ Implemented |
+| GET | `/api/threads/:id` | ✅ Implemented |
+| POST | `/api/threads` | ✅ Implemented |
+| PUT | `/api/threads/:id` | ✅ Implemented |
+| DELETE | `/api/threads/:id` | ✅ Implemented |

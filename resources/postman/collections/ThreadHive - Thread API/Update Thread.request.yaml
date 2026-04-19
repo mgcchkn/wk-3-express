@@ -1,0 +1,14 @@
+$kind: http-request
+description: Updates an existing thread by its ID. Accepts optional title and content fields.
+url: "{{baseUrl}}/threads/{{threadId}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+    	"title": "Updated Thread Title",
+    	"content": "Updated content for the thread."
+    }
+order: 4000

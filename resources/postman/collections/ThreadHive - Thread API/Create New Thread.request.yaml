@@ -1,0 +1,16 @@
+$kind: http-request
+description: Creates a new thread. Requires title, content, author, and subreddit in the request body.
+url: "{{baseUrl}}/threads"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+    	"title": "My First Thread",
+    	"content": "This is the content of my first thread.",
+    	"author": "{{authorId}}",
+    	"subreddit": "{{subredditId}}"
+    }
+order: 3000

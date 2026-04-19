@@ -1,0 +1,5 @@
+$kind: http-request
+description: Fetches a single thread by its ID.
+url: "{{baseUrl}}/threads/{{threadId}}"
+method: GET
+order: 2000

@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "ThreadHive - Thread API",
+		"description": "Postman collection for the ThreadHive Thread API endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api"
+		},
+		{
+			"key": "threadId",
+			"value": "68040c2a1a8e4f3b5c9d0e1f"
+		},
+		{
+			"key": "authorId",
+			"value": "68040c2a1a8e4f3b5c9d0e2a"
+		},
+		{
+			"key": "subredditId",
+			"value": "68040c2a1a8e4f3b5c9d0e3b"
+		}
+	],
+	"item": [
+		{
+			"name": "Get All Threads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/threads",
+					"host": ["{{baseUrl}}"],
+					"path": ["threads"]
+				},
+				"description": "Fetches all threads."
+			}
+		},
+		{
+			"name": "Get Thread By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/threads/{{threadId}}",
+					"host": ["{{baseUrl}}"],
+					"path": ["threads", "{{threadId}}"]
+				},
+				"description": "Fetches a single thread by its ID."
+			}
+		},
+		{
+			"name": "Create New Thread",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"My First Thread\",\n\t\"content\": \"This is the content of my first thread.\",\n\t\"author\": \"{{authorId}}\",\n\t\"subreddit\": \"{{subredditId}}\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/threads",
+					"host": ["{{baseUrl}}"],
+					"path": ["threads"]
+				},
+				"description": "Creates a new thread. Requires title, content, author, and subreddit in the request body."
+			}
+		},
+		{
+			"name": "Update Thread",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Updated Thread Title\",\n\t\"content\": \"Updated content for the thread.\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/threads/{{threadId}}",
+					"host": ["{{baseUrl}}"],
+					"path": ["threads", "{{threadId}}"]
+				},
+				"description": "Updates an existing thread by its ID. Accepts optional title and content fields."
+			}
+		},
+		{
+			"name": "Delete Thread",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/threads/{{threadId}}",
+					"host": ["{{baseUrl}}"],
+					"path": ["threads", "{{threadId}}"]
+				},
+				"description": "Deletes a thread by its ID."
+			}
+		}
+	]
+}

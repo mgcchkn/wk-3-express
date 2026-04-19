@@ -1,0 +1,7 @@
+$kind: collection
+description: Postman collection for the ThreadHive Thread API endpoints.
+variables:
+  baseUrl: http://localhost:3000/api
+  threadId: 68040c2a1a8e4f3b5c9d0e1f
+  authorId: 68040c2a1a8e4f3b5c9d0e2a
+  subredditId: 68040c2a1a8e4f3b5c9d0e3b
